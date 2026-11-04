@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Name – Developer Portfolio</title>
+<meta name="description" content="Developer portfolio: projects, skills and contact details.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F7FB;--surface:#FFFFFF;--ink:#12141F;--muted:#585D75;--line:#E1E4F0;
+  --accent:#4338CA;--accent-soft:#E8E7FB;--coral:#E5484D;--cell:#4338CA;--cell-off:#E4E6F2;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'Instrument Sans','Segoe UI',system-ui,-apple-system,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D0F1D;--surface:#151833;--ink:#ECEEF9;--muted:#9AA0BE;--line:#242850;
+    --accent:#9A9CFF;--accent-soft:#1E2150;--coral:#FF7A7F;--cell:#9A9CFF;--cell-off:#1B1F42;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D0F1D;--surface:#151833;--ink:#ECEEF9;--muted:#9AA0BE;--line:#242850;
+  --accent:#9A9CFF;--accent-soft:#1E2150;--coral:#FF7A7F;--cell:#9A9CFF;--cell-off:#1B1F42;color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;letter-spacing:-.02em}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0}
+nav .brand{font-family:var(--display);font-weight:800;font-size:1.2rem;text-decoration:none}
+nav .links{display:flex;gap:1.5rem;align-items:center}
+nav a.l{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+nav a.l:hover{color:var(--ink)}
+#theme{background:var(--surface);border:1px solid var(--line);color:var(--ink);width:2.5rem;height:2.5rem;border-radius:50%;cursor:pointer;font-size:1.05rem}
+.hero{padding:4rem 0 3.5rem;display:grid;gap:3rem;grid-template-columns:1.1fr 1fr;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.5vw,4.75rem);font-weight:800}
+.hero h1 span{color:var(--accent)}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:34rem;margin:1.5rem 0 2rem}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--ink);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.graph{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:1.25rem}
+.graph .top{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);margin-bottom:.9rem;gap:1rem;flex-wrap:wrap}
+.grid{display:grid;grid-template-rows:repeat(7,1fr);grid-auto-flow:column;grid-auto-columns:1fr;gap:4px}
+.grid i{aspect-ratio:1;border-radius:3px;background:var(--cell-off);display:block}
+.grid i.on{background:var(--cell);animation:pop .5s both;animation-delay:calc(var(--c)*28ms)}
+@keyframes pop{from{opacity:0;transform:scale(.3)}to{opacity:var(--o);transform:scale(1)}}
+.stats{display:flex;gap:2rem;margin-top:1rem;flex-wrap:wrap}
+.stats b{font-family:var(--display);font-size:1.6rem;display:block}
+.stats small{color:var(--muted)}
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:700;margin-bottom:2rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p{margin:0 0 1rem;color:var(--muted);max-width:38rem}
+.skills{display:grid;gap:1.25rem}
+.skills h3{font-size:1rem;font-weight:700;margin-bottom:.6rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tags span{background:var(--accent-soft);color:var(--accent);padding:.3rem .85rem;border-radius:999px;font-size:.92rem;font-weight:500}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(17rem,1fr));gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.6rem;display:flex;flex-direction:column;gap:.9rem;text-decoration:none;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.card h3{font-size:1.35rem}
+.card p{margin:0;color:var(--muted);font-size:.98rem;flex:1}
+.card .meta{display:flex;justify-content:space-between;font-size:.88rem;color:var(--muted)}
+.card .meta b{color:var(--coral);font-weight:600}
+.contact{text-align:left}
+.contact .big{font-family:var(--display);font-weight:800;font-size:clamp(2rem,6vw,4rem);line-height:1.05;margin-bottom:1.5rem;max-width:44rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+@media (max-width:52rem){
+  .hero,.about{grid-template-columns:1fr}
+  nav .links a.l{display:none}
+  .hero{padding-top:2rem}
+}
+@media (prefers-reduced-motion:reduce){.grid i.on{animation:none;opacity:var(--o)}html{scroll-behavior:auto}.btn,.card{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="brand" href="#top" id="brand">yourname</a>
+    <div class="links">
+      <a class="l" href="#about">About</a>
+      <a class="l" href="#projects">Projects</a>
+      <a class="l" href="#contact">Contact</a>
+      <button id="theme" aria-label="Switch between light and dark theme">◐</button>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <h1 id="h-name">Hi, I’m <span>Your Name</span>.</h1>
+      <p class="lead" id="h-tag"></p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" id="gh-link" href="#" target="_blank" rel="noopener">GitHub profile</a>
+      </div>
+    </div>
+    <div class="graph" aria-label="Decorative contribution graph">
+      <div class="top"><span>Building in public</span><span id="gh-handle">@yourusername</span></div>
+      <div class="grid" id="grid"></div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about">
+      <div id="about-text"></div>
+      <div class="skills" id="skills"></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Selected projects</h2>
+    <div class="projects" id="proj"></div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p class="big">Have an idea or an opening? Let’s talk.</p>
+    <div class="cta">
+      <a class="btn primary" id="mail" href="#">Send an email</a>
+      <a class="btn" id="li" href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>© <span id="yr"></span> <span id="f-name">Your Name</span>. Built with HTML and CSS.</footer>
+</div>
+
+<script>
+/* ====== EDIT THIS BLOCK: replace everything with your own details ====== */
+var ME = {
+  name: "Your Name",
+  username: "yourusername",
+  tagline: "Aspiring full-stack developer who turns ideas into clean, fast and useful web apps.",
+  email: "you@example.com",
+  linkedin: "https://www.linkedin.com/in/yourprofile",
+  about: [
+    "I’m a developer who enjoys building things people actually use. I started my coding journey recently and I ship something new every week to keep learning.",
+    "I care about readable code, accessible interfaces and clear documentation. I’m open to internships, freelance work and open-source collaboration."
+  ],
+  skills: {
+    "Languages": ["JavaScript","Python","HTML","CSS","SQL"],
+    "Frameworks": ["React","Node.js","Flask","Tailwind CSS"],
+    "Tools": ["Git","GitHub","VS Code","Figma","Linux"]
+  },
+  stats: [["12","Repositories"],["4","Projects shipped"],["100+","Commits"]],
+  projects: [
+    {name:"Weather Dashboard",desc:"Live weather app with city search, 5-day forecast and clean charts.",lang:"JavaScript",url:"https://github.com/yourusername/weather-dashboard"},
+    {name:"Task Manager",desc:"Full-stack to-do app with authentication, categories and due dates.",lang:"React",url:"https://github.com/yourusername/task-manager"},
+    {name:"Expense Tracker",desc:"Track spending, set budgets and see monthly summaries at a glance.",lang:"Python",url:"https://github.com/yourusername/expense-tracker"}
+  ]
+};
+/* ====== END OF EDIT BLOCK ====== */
+
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var gh="https://github.com/"+ME.username;
+  document.title=ME.name+" – Developer Portfolio";
+  $("brand").textContent=ME.username;
+  $("h-name").innerHTML="Hi, I’m <span></span>.";
+  $("h-name").querySelector("span").textContent=ME.name;
+  $("h-tag").textContent=ME.tagline;
+  $("gh-link").href=gh;
+  $("gh-handle").textContent="@"+ME.username;
+  $("mail").href="mailto:"+ME.email;
+  $("li").href=ME.linkedin;
+  $("f-name").textContent=ME.name;
+  $("yr").textContent=new Date().getFullYear();
+
+  ME.about.forEach(function(t){var p=document.createElement("p");p.textContent=t;$("about-text").appendChild(p)});
+  Object.keys(ME.skills).forEach(function(k){
+    var d=document.createElement("div"),h=document.createElement("h3"),t=document.createElement("div");
+    h.textContent=k;t.className="tags";
+    ME.skills[k].forEach(function(s){var sp=document.createElement("span");sp.textContent=s;t.appendChild(sp)});
+    d.appendChild(h);d.appendChild(t);$("skills").appendChild(d);
+  });
+  ME.stats.forEach(function(s){
+    var d=document.createElement("div"),b=document.createElement("b"),sm=document.createElement("small");
+    b.textContent=s[0];sm.textContent=s[1];d.appendChild(b);d.appendChild(sm);$("stats").appendChild(d);
+  });
+  ME.projects.forEach(function(p){
+    var a=document.createElement("a");a.className="card";a.href=p.url;a.target="_blank";a.rel="noopener";
+    var h=document.createElement("h3");h.textContent=p.name;
+    var d=document.createElement("p");d.textContent=p.desc;
+    var m=document.createElement("div");m.className="meta";
+    var l=document.createElement("b");l.textContent=p.lang;
+    var v=document.createElement("span");v.textContent="View code";
+    m.appendChild(l);m.appendChild(v);
+    a.appendChild(h);a.appendChild(d);a.appendChild(m);$("proj").appendChild(a);
+  });
+
+  /* contribution-style graph: 22 weeks, activity grows toward the right */
+  var seed=7,rnd=function(){seed=(seed*9301+49297)%233280;return seed/233280};
+  var cols=22,g=$("grid");
+  for(var c=0;c<cols;c++){
+    for(var r=0;r<7;r++){
+      var i=document.createElement("i"),chance=0.25+0.6*(c/cols);
+      if(rnd()<chance){
+        var lvl=1+Math.floor(rnd()*4);
+        i.className="on";
+        i.style.setProperty("--o",(0.25+lvl*0.19).toFixed(2));
+        i.style.setProperty("--c",c);
+      }
+      g.appendChild(i);
+    }
+  }
+
+  $("theme").addEventListener("click",function(){
+    var el=document.documentElement,cur=el.getAttribute("data-theme");
+    if(!cur){cur=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}
+    el.setAttribute("data-theme",cur==="dark"?"light":"dark");
+  });
+})();
+</script>
+</body>
+</html>
