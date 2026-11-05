@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keerthi Siva Prasad | Python Developer</title>
+  <meta name="description" content="Portfolio of Keerthi Siva Prasad - AI &amp; ML student, Python and SQL developer. Projects, skills and certificates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="nav" id="nav">
+    <a href="#home" class="logo">KS<span>.</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <canvas id="bg"></canvas>
+    <div class="hero-inner">
+      <p class="hello reveal">Hello, I'm</p>
+      <h1 class="reveal">Keerthi <span class="grad">Siva Prasad</span></h1>
+      <h2 class="reveal"><span id="typed"></span><span class="cursor">|</span></h2>
+      <p class="lead reveal">AI &amp; ML student who builds practical applications with Python, SQL and Java. Looking for an internship to learn, contribute and grow.</p>
+      <div class="cta reveal">
+        <a href="#projects" class="btn primary">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="resume.pdf" class="btn ghost" download><i class="fa-solid fa-download"></i> Download Resume</a>
+      </div>
+      <div class="socials reveal">
+        <a href="https://github.com/sivakeerthi946-cmd" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/siva-keerthi-191540357" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="mailto:sivakeerthi946@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down"><i class="fa-solid fa-chevron-down"></i></a>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h3 class="title reveal"><span>01.</span> About Me</h3>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I'm Keerthi Siva Prasad, a B.Tech student in Artificial Intelligence and Machine Learning at Tirumala Engineering College. I enjoy building practical applications with Python, SQL and Java, and creating clean web pages with HTML and CSS.</p>
+          <p>I'm currently in my pre-final year and looking for an internship where I can apply my technical fundamentals and problem-solving skills, learn from experienced developers and contribute to real projects.</p>
+          <ul class="facts">
+            <li><i class="fa-solid fa-location-dot"></i> Vinukonda, Andhra Pradesh, India</li>
+            <li><i class="fa-solid fa-briefcase"></i> Open to Internships</li>
+            <li><i class="fa-solid fa-language"></i> Telugu, English, Hindi</li>
+          </ul>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><b data-count="1">0</b><span>Project Built</span></div>
+          <div class="stat"><b data-count="1">0</b><span>Internship</span></div>
+          <div class="stat"><b data-count="2">0</b><span>Certificates</span></div>
+          <div class="stat"><b data-count="3">0</b><span>Languages Spoken</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section alt" id="skills">
+    <div class="container">
+      <h3 class="title reveal"><span>02.</span> Skills</h3>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <h4><i class="fa-solid fa-code"></i> Programming &amp; Database</h4>
+          <div class="bar"><div class="bar-top"><span>Python</span><em>80%</em></div><div class="track"><i data-w="80"></i></div></div>
+          <div class="bar"><div class="bar-top"><span>SQL</span><em>80%</em></div><div class="track"><i data-w="80"></i></div></div>
+          <div class="bar"><div class="bar-top"><span>OOPs through Java</span><em>70%</em></div><div class="track"><i data-w="70"></i></div></div>
+        </div>
+        <div class="skill-card reveal">
+          <h4><i class="fa-solid fa-laptop-code"></i> Web</h4>
+          <div class="bar"><div class="bar-top"><span>HTML</span><em>70%</em></div><div class="track"><i data-w="70"></i></div></div>
+          <div class="bar"><div class="bar-top"><span>CSS</span><em>70%</em></div><div class="track"><i data-w="70"></i></div></div>
+        </div>
+        <div class="skill-card reveal">
+          <h4><i class="fa-solid fa-screwdriver-wrench"></i> Tools &amp; Fundamentals</h4>
+          <div class="chips">
+            <span>PyCharm</span><span>VS Code</span><span>Dev C++</span><span>Jupyter</span><span>C</span><span>Data Structures &amp; Algorithms</span><span>DBMS</span><span>MySQL</span><span>Flask</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h3 class="title reveal"><span>03.</span> Projects</h3>
+      <div class="projects">
+        <article class="project reveal tilt">
+          <div class="p-icon"><i class="fa-solid fa-hospital"></i></div>
+          <h4>Smart Hospital Appointment &amp; Patient Management System</h4>
+          <p>Web-based system that automates appointment scheduling and patient records. Includes role-based authentication, secure Flask and SQL backend workflows, and conflict-free time-slot allocation to reduce patient waiting time. Built with a clean code structure and a normalized database.</p>
+          <div class="tags"><span>Python</span><span>Flask</span><span>MySQL</span><span>HTML</span><span>CSS</span></div>
+          <div class="links"><a href="https://github.com/sivakeerthi946-cmd" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section class="section alt" id="education">
+    <div class="container">
+      <h3 class="title reveal"><span>04.</span> Education &amp; Experience</h3>
+      <div class="timeline">
+        <div class="t-item reveal">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <span class="date">2024 - 2028</span>
+            <h4>B.Tech in Artificial Intelligence &amp; Machine Learning</h4>
+            <p class="muted">Tirumala Engineering College, Narasaraopet &bull; CGPA: 7.45</p>
+            <p>Currently in pre-final year.</p>
+          </div>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <span class="date">Jun 2026 - Aug 2026</span>
+            <h4>Intern</h4>
+            <p class="muted">Pratinik Infotech</p>
+          </div>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <span class="date">2022 - 2025</span>
+            <h4>Diploma in Computer Science &amp; Engineering</h4>
+            <p class="muted">GVR &amp; S College of Engineering &amp; Technology &bull; 65%</p>
+          </div>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <span class="date">2021 - 2022</span>
+            <h4>Secondary School Certificate (SSC)</h4>
+            <p class="muted">AP Model School, Cheekatigalapalem &bull; 59%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ACHIEVEMENTS ========== -->
+  
+
+  <!-- ========== CERTIFICATES ========== -->
+  <section class="section alt" id="certificates">
+    <div class="container">
+      <h3 class="title reveal"><span>05.</span> Certificates</h3>
+      <div class="cert-grid">
+        <div class="cert reveal"><i class="fa-solid fa-certificate"></i><div><h4>C Programming Certification</h4><p>Infosys Springboard &bull; May - Jun 2026</p></div></div>
+        <div class="cert reveal"><i class="fa-solid fa-certificate"></i><div><h4>Kaggle Certificate of Completion</h4><p>Kaggle &bull; Sep 2026</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section" id="contact">
+    <div class="container narrow">
+      <h3 class="title center reveal"><span>06.</span> Get In Touch</h3>
+      <p class="center muted reveal">I'm actively looking for opportunities. Whether you have a question or just want to say hi, my inbox is always open.</p>
+      <form class="form reveal" id="contactForm">
+        <div class="row">
+          <input type="text" id="cName" placeholder="Your Name" required />
+          <input type="email" id="cEmail" placeholder="Your Email" required />
+        </div>
+        <textarea id="cMsg" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn primary">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+      <div class="contact-info reveal">
+        <a href="mailto:sivakeerthi946@gmail.com"><i class="fa-solid fa-envelope"></i> sivakeerthi946@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Designed &amp; Built by <b>Keerthi Siva Prasad</b> &copy; <span id="year"></span></p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
